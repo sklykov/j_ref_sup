@@ -1,3 +1,4 @@
+# Java-specific ignored files
 # Compiled class file
 *.class
 
@@ -21,3 +22,43 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# Some files suggested to be ignored as the main IDE for development - IntelliJ
+# User-specific stuff
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# Generated files
+.idea/**/contentModel.xml
+
+# Sensitive or high-churn files
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+
+# File-based project format
+*.iws
+
+# IntelliJ folder for compiled classes
+out/
+
+# A bit - OS-specific files
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
