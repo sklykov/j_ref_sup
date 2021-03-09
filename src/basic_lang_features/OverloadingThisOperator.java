@@ -14,7 +14,7 @@ public class OverloadingThisOperator {
         this.description = description;
     }
 
-    // overloaded construction referred to above complex constructor
+    // overloaded simplified constructor referred to the above general constructor
     OverloadingThisOperator(int equalParameters, String description){
         this(equalParameters, equalParameters, description);
     }
@@ -36,12 +36,12 @@ public class OverloadingThisOperator {
         return description;
     }
 
-    // self-test of implementation
+    // self-test of the implementation
     public static void main(String[] args) {
         OverloadingThisOperator fullConstructor = new OverloadingThisOperator(1, 1, "Full");
         OverloadingThisOperator partialConstructor = new OverloadingThisOperator(2, "Partial");
         OverloadingThisOperator shortenedConstr = new OverloadingThisOperator();
         System.out.println("Default class parameters: " + shortenedConstr.getX() +
-                "," + shortenedConstr.getY() + "," + shortenedConstr.getDescription());
+                ", " + shortenedConstr.getY() + ", " + shortenedConstr.getDescription());
     }
 }
