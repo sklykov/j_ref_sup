@@ -33,7 +33,7 @@ public class BasicCreationManipulations {
         initializedStrings[count] = str1; count++;
 
         // 2 - from char arrays
-        char chars[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'};
+        char[] chars = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'};
         String str2 = new String(chars);
         initializedStrings[count] = str2; count++;
         // 2.1 - with specification of starting index length
@@ -42,15 +42,15 @@ public class BasicCreationManipulations {
         initializedStrings[count] = str3; count++;
 
         // 3 - from ASCII and Unicode characters sets (standards)
-        byte chars_ASC[] = {65, 66, 67, 68, 69, 70, 71, 72, 73};
+        byte[] chars_ASC = {65, 66, 67, 68, 69, 70, 71, 72, 73};
         String str4 = new String(chars_ASC);
         initializedStrings[count] = str4; count++;
         // Unicode values in decimal form should be specified as char array below, no int or short!
-        char chars_Unicode[] = {1072, 1073, 1074, 1075, 1076, 1077, 1078, 1079};
+        char[] chars_Unicode = {1072, 1073, 1074, 1075, 1076, 1077, 1078, 1079};
         String str5 =   new String(chars_Unicode);
         initializedStrings[count] = str5; count++;
         // Another Unicode example
-        char chars_Unicode2[] = {'\u03B1', '\u03B2', '\u03B3', '\u03B4', '\u03B5'};
+        char[] chars_Unicode2 = {'\u03B1', '\u03B2', '\u03B3', '\u03B4', '\u03B5'};
         String str6 =   new String(chars_Unicode2);
         initializedStrings[count] = str6; count++;
 
@@ -80,8 +80,24 @@ public class BasicCreationManipulations {
             count++;
             //spacebars += " ";
         }
-
         System.out.println(str8);
+
+        // StringBuffer and StringBuilder - synchronized and non-synchronized mutable strings
+        StringBuffer sbfer = new StringBuffer("This is test for StringBuffer and StringBuilder");
+        StringBuilder sbder = new StringBuilder(sbfer);
+        System.out.println("buffer length and capacity: " + sbfer.length() + ", " + sbfer.capacity());
+        System.out.println("builder length and capacity: " + sbder.length() + ", " + sbder.capacity());
+        // cut out redundant words - working on the StringBuffer and StringBuilder strings
+        int startCut = sbder.indexOf("a");  // position of 'a' character
+        startCut -= 1;
+        sbfer.delete(startCut, sbfer.length());
+        sbfer.append(" + StrBuff appender");
+        System.out.println(sbfer);
+        int endCut = startCut + 4;
+        startCut = sbder.indexOf("r");  // position of 'f' character
+        sbder.delete(startCut + 1, endCut);
+        sbder.append(" + ending appender");
+        System.out.println(sbder);
 
     }
 }
