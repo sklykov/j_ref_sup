@@ -61,4 +61,32 @@ class Triangle extends Figure {
         System.out.println("The area is: " + this.area());
         System.out.println("The rounded area is: " + round(this.area()));
     }
+
+    /**
+     * Returns array containing sides of the initialized triangle
+     * @return sides - array of 3 double values
+     */
+    public double[] getSides(){
+        double sides[] = {this.A, this.B, this.C};
+        return sides;
+    }
+
+    /**
+     * Comparison of two triangles by comparing their sides lengths side by side.
+     * @param t:
+     *         Triangle class
+     * @return boolean
+     */
+    boolean equalTo(Triangle t){
+        boolean equal = true;
+        double[] sides = this.getSides();
+        double[] comparedToSides = t.getSides();
+        for (int i = 0; i < sides.length; i++){
+            if (sides[i] != comparedToSides[i]){
+                equal = false;
+                break;
+            }
+        }
+        return equal;
+    }
 }

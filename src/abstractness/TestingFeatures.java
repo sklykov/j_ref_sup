@@ -14,6 +14,9 @@ public class TestingFeatures {
         }
         Triangle triangleValid = new Triangle(3, 4, 6);
         triangleValid.printProperties();
-
+        Triangle triangleNotEqual = new Triangle(3, 5, 6);
+        System.out.println("Are triangles [3, 4, 6] and [3, 5, 6] equal?: " + triangleValid.equalTo(triangleNotEqual));
+        Triangle triangleEqual = new Triangle(3, 4, 6);
+        System.out.println("Are triangles [3, 4, 6] and [3, 4, 6] equal?: " + triangleValid.equalTo(triangleEqual));
     }
 }
