@@ -1,7 +1,7 @@
 package enumerations;
 
 /**
- * Elements uses Particles enumeration for accessing some their core properties
+ * Element uses Particles enumeration for accessing some their core properties
  */
 public class Elements {
     private int coreCharge; private int weight;
