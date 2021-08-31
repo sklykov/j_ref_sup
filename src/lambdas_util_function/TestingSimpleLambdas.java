@@ -1,6 +1,8 @@
 package lambdas_util_function;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.function.Function;
 import java.util.function.IntPredicate;
 
 public class TestingSimpleLambdas {
@@ -21,9 +23,27 @@ public class TestingSimpleLambdas {
                 filteredArray.add(a);
             }
         }
-        System.out.println(filteredArray);
+        System.out.println("Filter applied: " + filteredArray);
 
         // using Consumer interface for ArrayList -> applied as lambda function for each element
-        initialArray.forEach(a -> System.out.print(a + " "));
+        System.out.print("Initial array: ");
+        initialArray.forEach((Integer a) -> System.out.print(a + " "));
+
+        // using Function for performing some tasks
+        System.out.println();
+        Function<String, String> stringHandling = s -> {;
+           return s.toUpperCase();
+        };
+        System.out.println("abba => " + stringHandling.apply("abba"));
+
+        // another way of applying of methods:
+        filteredArray.clear();
+        initialArray.forEach((Integer i) -> {
+            if (i < 0){
+                filteredArray.add(i);
+            }
+        });
+        System.out.print("Only negative numbers: ");
+        filteredArray.forEach(System.out::print); // only some operation that can be applied to all values => no spaces added between
     }
 }
