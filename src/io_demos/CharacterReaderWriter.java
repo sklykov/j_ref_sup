@@ -47,7 +47,7 @@ public class CharacterReaderWriter {
             values[i] = (i+1)*0.25;
         }
 
-        // writing some string line by line by using BufferedWriter
+        // writing some string line-by-line by using BufferedWriter
         try(BufferedWriter bufferedFileWriter = new BufferedWriter(new FileWriter(textFilePath2))){
             // lines writing
             int j = 1;
