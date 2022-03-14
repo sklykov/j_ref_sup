@@ -62,3 +62,10 @@ ehthumbs.db
 *.msix
 *.msm
 *.msp
+
+# My own ignore files extensions
+*.pdf
+*.jpg
+*.doc
+*.docx
+*.odt
